@@ -1,47 +1,122 @@
-<extend name="Base/common"/>
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>内蒙古卓姿科技有限公司 </title>
 
-<block name="header">
-    <header class="jumbotron subhead" id="overview">
-        <div class="container">
-            <h2>源自相同起点，演绎不同精彩！</h2>
-            <p class="lead"></p>
+        <link rel="stylesheet" href="__CSS__/style.css">
+
+        <meta name="viewport" content="width=device-width">
+
+    </head>
+    <style type="text/css">
+        .header_wrap{
+            background:rgba(0,0,0,0.6);
+            height:40px;
+            width:100%;
+            position:fixed;
+            top:0;
+            left:0;
+            z-index: 999
+        }
+        .header{
+            width:1000px;
+            margin:0 auto;
+        }
+        .header li{float:left;list-style:none}
+        .header li a{color:#fff;line-height:40px;text-decoration: none;display:inline-block;margin:0 30px;font-family:"Microsoft Yahei"}
+        .f_left{float:left;}
+        .f_right{float:right;}
+        .cl{clear:both;}
+        .footer{width:1000px;margin:0 auto;}
+        .footer p{text-align:left}
+        .banner ul li{
+            position:relative;
+        }
+        .banner ul li .inner{
+            margin-top:-100px;
+            top:40%;
+            position:absolute;
+            text-align:center;
+            display: block;
+            width:100%;
+        }
+        .features a{
+            text-decoration: none;
+            color:#a48d66;
+        }
+        #dingyue,#fuwu{
+            position:relative;
+        }
+        #dingyue img,#fuwu img{
+            display:none;
+            width:100px;
+            position:absolute;
+            height:100px;
+            top:0;
+            right:0;
+            z-index: 99999;
+        }
+    </style>
+    <body>
+        <div class="header_wrap">
+            <div class="header">
+                <div class="f_left" style="background:url('__IMG__/img/1.jpg') no-repeat;background-size:40px 40px">
+                    <li><a href="#" style="padding-left:30px;font-size:18px">卓资科技</a></li>
+                </div>
+                <div class="f_right">
+                    <think:nav name="nav">
+                        <eq name="nav.pid" value="0">
+                        <li>
+                            <a href="{$nav.url|get_nav_url}" target="<eq name='nav.target' value='1'>_blank<else/>_self</eq>">{$nav.title}</a>
+                        </li>
+                        </eq>
+                    </think:nav>
+                </div>
+                <div class="cl"></div>
+            </div>
         </div>
-    </header>
-</block>
+        <include file="Public/banner"/>
+        <div class="features">
+            <ul class="wrap">
+                <li class="browser">
+                    <b>卓资科技</b>
+                    <p><a href="#">行业动态</a></p>
+                    <p><a href="#">最新活动</a></p>
+                </li>
 
-<block name="side">
-<!-- 左侧 nav
-================================================== -->
-    <div class="span3 bs-docs-sidebar">
-        <ul class="nav nav-list bs-docs-sidenav">
-            {:W('Category/lists', array(1, true))}
-        </ul>
-    </div>
-</block>
+                <li class="keyboard">
+                    <b>加入我们</b>
+                    <p><a href="#">全国代理</a></p>
+                    <p><a href="#">代理须知</a></p>
+                </li>
 
-<block name="body">
-    <div class="span9">
-        <!-- Contents
-        ================================================== -->
-        <section id="contents">
-            <article:list name="article" category="1" child="true">
-                <div class="">
-                    <h3><a href="{:U('Article/detail?id='.$article['id'])}">{$article.title}</a></h3>
-                </div>
-                <div>
-                    <p class="lead">{$article.description}</p>
-                </div>
-                <div>
-                    <span><a href="{:U('Article/detail?id='.$article['id'])}">查看全文</a></span>
-                    <span class="pull-right">
-                        <span class="author">{$article.uid|get_username}</span>
-                        <span>于 {$article.create_time|date='Y-m-d H:i',###}</span> 发表在 <span>
-                        <a href="{:U('Article/lists?category='.get_category_name($article['category_id']))}">{$article.category_id|get_category_title}</a></span> ( 阅读：{$article.view} )
-                    </span>
-                </div>
-                <hr/>
-            </article:list>
+                <li class="height">
+                    <b>产品介绍</b>
+                    <p><a href="#"> 产品安装</a></p>
+                    <p><a href="#">产品购买</a></p>
+                </li>
 
-        </section>
-    </div>
-</block>
+                <li class="responsive">
+                    <b>微信</b>
+                    <p id="dingyue">微信订阅号<img src="__IMG__/img/dy.jpg" alt=""></p>
+                    <p id="fuwu">微信服务号<img src="__IMG__/img/fw.jpg" alt=""></p>
+                </li>
+            </ul>
+        </div>
+        <div id="options" class="options">
+            <div class="wrap">
+                <h2>简介</h2>
+                <p>内蒙古卓姿科技有限公司是一家专业从事教育辅助产品研发并集生产、销售于一体的高新科技企业。公司成立于2015年，注册资30万元，卓姿科技总部位于内蒙古包头市，并在广州佛山成立了生产、物流基地。卓姿科技创立之初即以提升青少年健康，帮助青少年远离近视、保持矫健身姿为导向，经过专业团队1年潜心研发，“变形卓姿宝”多功能变形坐姿、视力矫正器问世。“变形卓姿宝”是一款可帮助青少年矫正坐姿，预防近视的坐姿及视力矫正仪器，“变形卓姿宝”也是国内唯一一个专门针对公司白领进行坐姿矫正，改善视力的建康辅助产品。</p>
+
+                <pre style="word-wrap:break-word">内蒙古卓姿科技有限公司是一家专业从事教育辅助产品研发并集生产、销售于一体的高新科技企业。公司成立于2015年，注册资30万元，卓姿科技总部位于内蒙古包头市，并在广州佛山成立了生产、物流基地。卓姿科技创立之初即以提升青少年健康，帮助青少年远离近视、保持矫健身姿为导向，经过专业团队1年潜心研发，“变形卓姿宝”多功能变形坐姿、视力矫正器问世。“变形卓姿宝”是一款可帮助青少年矫正坐姿，预防近视的坐姿及视力矫正仪器，“变形卓姿宝”也是国内唯一一个专门针对公司白领进行坐姿矫正，改善视力的建康辅助产品。</pre>
+<br><br><br>
+
+            </div>
+        </div>
+    <include file="Public/footer">
+    <script>
+            $('#dingyue,#fuwu').hover(function(){$(this).find('img').show();},function(){$(this).find('img').hide()})
+    </script>
+    </body>
+</html>

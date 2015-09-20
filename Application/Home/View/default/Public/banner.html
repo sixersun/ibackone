@@ -1,0 +1,77 @@
+        <div class="banner">
+            <ul>
+                <li style="background-image: url('__IMG__/img/sunset.jpg');">
+                    <div class="inner">
+                        <h1>The jQuery slider that just slides.</h1>
+                        <p>No fancy effects or unnecessary markup, and it’s less than 3kb.</p>
+                    </div>
+                </li>
+
+                <li style="background-image: url('__IMG__/img/wood.jpg');">
+                    <div class="inner">
+                        <h1>Fluid, flexible, fantastically minimal.</h1>
+                        <p>Use any HTML in your slides, extend with CSS. You have full control.</p>
+
+                    </div>
+                </li>
+
+                <li style="background-image: url('__IMG__/img/subway.jpg');">
+                    <div class="inner">
+                        <h1>Open-source.</h1>
+                        <p>Everything to do with Unslider is hosted on GitHub.</p>
+
+                    </div>
+                </li>
+
+                <li style="background-image: url('__IMG__/img/shop.jpg');">
+                    <div class="inner">
+                        <h1>Uh, that’s about it.</h1>
+                        <p>I just wanted to show you another slide.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <script src="__JS__/jquery.min.js"></script>
+        <script src="__JS__/unslider.min.js"></script>
+        <script>
+            if(window.chrome) {
+                $('.banner li').css('background-size', '100% 100%');
+            }
+            $('.banner').find('ul li').height(window.screen.availHeight-39);
+
+            $('.banner').unslider({
+                speed: 500,               //  The speed to animate each slide (in milliseconds)
+                delay: 3000,              //  The delay between slide animations (in milliseconds), false for no autoplay
+                complete: function() {},  //  A function that gets called after every slide animation
+                keys: true,               //  Enable keyboard (left, right) arrow shortcuts
+                dots: true,               //  Display dot navigation
+                fluid: false              //  Support responsive design. May break non-responsive designs
+            });
+
+
+            //  Find any element starting with a # in the URL
+            //  And listen to any click events it fires
+            $('a[href^="#"]').click(function() {
+                //  Find the target element
+                var target = $($(this).attr('href'));
+
+                //  And get its position
+                var pos = target.offset(); // fallback to scrolling to top || {left: 0, top: 0};
+
+                //  jQuery will return false if there's no element
+                //  and your code will throw errors if it tries to do .offset().left;
+                if(pos) {
+                    //  Scroll the page
+                    $('html, body').animate({
+                        scrollTop: pos.top,
+                        scrollLeft: pos.left
+                    }, 1000);
+                }
+
+                //  Don't let them visit the url, we'll scroll you there
+                return false;
+            });
+
+            var GoSquared = {acct: 'GSN-396664-U'};
+        </script>

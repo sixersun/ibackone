@@ -1,21 +1,34 @@
-<meta charset="UTF-8">
-<title>{:C('WEB_SITE_TITLE')}</title>
-<link href="__STATIC__/bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="__STATIC__/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-<link href="__STATIC__/bootstrap/css/docs.css" rel="stylesheet">
-<link href="__STATIC__/bootstrap/css/onethink.css" rel="stylesheet">
-
-<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-<script src="__STATIC__/bootstrap/js/html5shiv.js"></script>
-<![endif]-->
-<block name="style"></block>
-<!--[if lt IE 9]>
-<script type="text/javascript" src="__STATIC__/jquery-1.10.2.min.js"></script>
-<![endif]-->
-<!--[if gte IE 9]><!-->
-<script type="text/javascript" src="__STATIC__/jquery-2.0.3.min.js"></script>
-<script type="text/javascript" src="__STATIC__/bootstrap/js/bootstrap.min.js"></script>
-<!--<![endif]-->
-<!-- 页面header钩子，一般用于加载插件CSS文件和代码 -->
-{:hook('pageHeader')}
+    <style type="text/css">
+        .header_wrap{
+            background:rgba(0,0,0,0.6);
+            height:40px;
+            width:100%;
+            position:fixed;
+            top:0;
+            left:0;
+            z-index: 999
+        }
+        .header{
+            width:1000px;
+            margin:0 auto;
+        }
+        .header li{float:left;list-style:none}
+        .header li a{color:#fff;line-height:40px;text-decoration: none;display:inline-block;margin:0 30px;font-family:"Microsoft Yahei"}
+        .f_left{float:left;}
+        .f_right{float:right;}
+        .cl{clear:both;}
+        .footer{width:1000px;margin:0 auto;}
+        .footer p{text-align:left}
+        .banner ul li{
+            position:relative;
+        }
+        .banner ul li .inner{
+            margin-top:-100px;
+            top:40%;
+            position:absolute;
+            text-align:center;
+            display: block;
+            width:100%;
+        }
+    </style>
+    <link rel="stylesheet" href="__CSS__/style.css">
