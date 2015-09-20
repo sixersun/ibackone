@@ -1,0 +1,32 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<div class="main-title">
+		<h2>代理商管理</h2>
+	</div>
+	<div class="tab-wrap">
+		<ul class="tab-nav nav">
+			<li><a href="{:U('index')}">代理商列表</a</li>
+			<li  class="current"><a href="{:U('/Dali/index/1')}">新增代理商</a></li>
+		</ul>
+	<script src='/Public/Home/js/PCASClass.js'></script>
+		<div>
+			<form action="admin.php?s=/Dali/add" method="POST">
+					<select name="province" id="p"></select>
+					<select name="city" id="c"></select>
+					<select name="area" id="a"></select>
+					<br/>
+					<br/>
+					
+					<input type="text" name="company" class="text input-large">
+					<span class="check-tips">（请填写公司名称）</span>
+					<br/>
+					<br/>
+					<input type="submit" value="新建代理商" id="search" class="btn submit-btn">
+			</form>
+		</div>
+		<script type="text/javascript">
+		new PCAS("province","city","area");
+		</script>
+	</div>
+</block>

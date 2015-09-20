@@ -1,0 +1,31 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<div class="main-title">
+		<h2>防伪码管理</h2>
+	</div>
+	<div class="tab-wrap">
+		<ul class="tab-nav nav">
+			<li ><a href="{:U('index')}">新增防伪码</a</li>
+			<li  class="current"><a href="{:U('/Fangwei/index/1')}">防伪码管理</a></li>
+		</ul>
+		<div>
+		<div class="data-table table-striped">
+			<table>
+				<thead>
+				<tr>
+					<th>防伪编号</th>
+				</tr>
+				</thead>
+				<tbody>	
+					<volist name="list" id="l" >
+						<tr>
+							<td>{$l.fid}</td>
+						</tr>
+					</volist>
+				</tbody>
+			</table>
+		</div>
+		</div>
+	</div>
+</block>
