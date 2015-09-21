@@ -37,18 +37,34 @@
             display: block;
             width:100%;
         }
+        .features{
+            height:250px!important;
+        }
+        .wrap input{padding:10px;}
+        .wrap input[type='text']{width:500px;}
+        #search{
+              color: #333;
+              border: 1px solid #ccc;
+              height: 38px;
+              display: inline-block;
+              line-height: 37px;
+              text-decoration: none;
+              background: #fff;
+              padding: 0px 30px;
+        }
     </style>
     <link rel="stylesheet" href="__CSS__/style.css">
 <include file="Public/header"/>
 <include file="Public/banner"/>
-<script src='__JS__/PCASClass.js'></script>
 
 </script>
 <div class="features">
 	<div class="wrap">
+        <h2>防伪码查询</h2>
 		<form action="">
 			<input type="text" id="c_id">
-			<input type="button" value="防伪查询" id="search">
+			<!-- <input type="button" value="防伪查询" id="search"> -->
+            <a href="javascript:;" id="search">防伪查询</a>
 		</form>
 		<div class="msg"></div>
 	</div>
@@ -64,9 +80,6 @@
 			}
 		},'json');
 	});
-</script>
-<script type="text/javascript">
-new PCAS("province","city","area");
 </script>
 <include file="Public/footer"/>
 </body>
