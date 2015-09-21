@@ -32,6 +32,8 @@ class SearchController extends HomeController {
     }
     public function fangwei_search(){
         $id=I('post.id');
+        if(!$id) $this->_ajax(-1,'请提交数据',null);
+        if(!is_int($id)) $this->_ajax(-1,'请填写正确格式的防伪码',null);
         if($id=M('Fangwei')->where('fid='.$id)->find()) $this->_ajax(1,'正品',null);
         $this->_ajax(-1,'假冒',null);
     }

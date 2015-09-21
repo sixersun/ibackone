@@ -72,6 +72,10 @@
 <script>
 	$('#search').click(function(){
 		var id=$('#c_id').val();
+        if(!id){
+            alert('请填写防伪码');
+            return false;
+        }
 		$.post('/Home/Search/fangwei_search',{'id':id},function(ret){
 			if(ret.status==1){
 				alert(ret.msg);
