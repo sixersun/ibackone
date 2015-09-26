@@ -203,6 +203,10 @@ h1, h2, h3, h4, b {
 		display: block;
 		padding-bottom: 6px;
 	}
+	.features a{
+		color:#a48d66;
+		text-decoration:none;
+	}
 
 .how {
 	padding: 60px 0;
@@ -405,6 +409,10 @@ h1, h2, h3, h4, b {
 		background: url('img/icons@2x.png');
 		background-size: 100%;
 	}
+}
+.nav a{
+	width:70px;
+	text-align:center;
 }
 .nav ul{
 	display:none
