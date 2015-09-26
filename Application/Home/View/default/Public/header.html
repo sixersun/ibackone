@@ -1,16 +1,22 @@
+
         <div class="header_wrap">
             <div class="header">
                 <div class="f_left" style="background:url('__IMG__/img/1.jpg') no-repeat;background-size:40px 40px">
                     <li><a href="/" style="padding-left:30px;font-size:18px">卓资科技</a></li>
                 </div>
                 <div class="f_right">
-                    <think:nav name="nav">
-                        <eq name="nav.pid" value="0">
-                        <li>
-                            <a href="{$nav.url|get_nav_url}" target="<eq name='nav.target' value='1'>_blank<else/>_self</eq>">{$nav.title}</a>
-                        </li>
-                        </eq>
-                    </think:nav>
+                <think:nav name="nav" tree="true">
+                        <li class="nav">
+                            <a href="{$nav.url|get_nav_url}">{$nav.title}</a>
+                            <if condition="is_array($nav['_'])">
+                                <ul>
+                                    <volist name="nav['_']" id="vo">
+                                        <li><a href="{$vo.url|get_nav_url}">{$vo.title}</a></li>
+                                    </volist>
+                                </ul>
+                            </if>
+                        </li> 
+                </think:nav>
                 </div>
                 <div class="cl"></div>
             </div>

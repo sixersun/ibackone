@@ -9,72 +9,9 @@
         <meta name="viewport" content="width=device-width">
 
     </head>
-    <style type="text/css">
-        .header_wrap{
-            background:rgba(0,0,0,0.6);
-            height:40px;
-            width:100%;
-            position:fixed;
-            top:0;
-            left:0;
-            z-index: 999
-        }
-        .header{
-            width:1000px;
-            margin:0 auto;
-        }
-        .header li{float:left;list-style:none}
-        .header li a{color:#fff;line-height:40px;text-decoration: none;display:inline-block;margin:0 30px;font-family:"Microsoft Yahei"}
-        .f_left{float:left;}
-        .f_right{float:right;}
-        .cl{clear:both;}
-        .footer{width:1000px;margin:0 auto;}
-        .banner ul li{
-            position:relative;
-        }
-        .banner ul li .inner{
-            margin-top:-100px;
-            top:40%;
-            position:absolute;
-            text-align:center;
-            display: block;
-            width:100%;
-        }
-        .features a{
-            text-decoration: none;
-            color:#a48d66;
-        }
-        #dingyue,#fuwu{
-            position:relative;
-        }
-        #dingyue img,#fuwu img{
-            display:none;
-            width:100px;
-            position:absolute;
-            height:100px;
-            top:0;
-            right:0;
-            z-index: 99999;
-        }
-    </style>
     <body>
-        <div class="header_wrap">
-            <div class="header">
-                <div class="f_left" style="background:url('__IMG__/img/1.jpg') no-repeat;background-size:40px 40px">
-                    <li><a href="#" style="padding-left:30px;font-size:18px">卓资科技</a></li>
-                </div>
-                <div class="f_right">
-                    <think:nav name="nav">
-                        <eq name="nav.pid" value="0">
-                        <li>
-                            <a href="{$nav.url|get_nav_url}" target="<eq name='nav.target' value='1'>_blank<else/>_self</eq>">{$nav.title}</a>
-                        </li>
-                        </eq>
-                    </think:nav>
-                </div>
-                <div class="cl"></div>
-            </div>
-        </div>
+        <include file="Public/head"/>
+        <include file="Public/header"/>
         <include file="Public/banner"/>
         <div class="features">
             <ul class="wrap">
