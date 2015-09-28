@@ -1,34 +1,43 @@
         <div class="banner">
             <ul>
-                <li style="background-image: url('__IMG__/img/sunset.jpg');">
-                    <div class="inner">
-                        <h1>The jQuery slider that just slides.</h1>
-                        <p>No fancy effects or unnecessary markup, and it’s less than 3kb.</p>
-                    </div>
-                </li>
+                <if condition="$pic neq '' ">
+                <volist name="pic" id="pic">
+                    <li style="background-image:url('{$pic.path}')">
+                        <div class="inner">
+                        </div>
+                    </li>
+                </volist>
+                <else />
+                    <li style="background-image: url('__IMG__/img/sunset.jpg');">
+                        <div class="inner">
+                            <h1>The jQuery slider that just slides.</h1>
+                            <p>No fancy effects or unnecessary markup, and it’s less than 3kb.</p>
+                        </div>
+                    </li>
 
-                <li style="background-image: url('__IMG__/img/wood.jpg');">
-                    <div class="inner">
-                        <h1>Fluid, flexible, fantastically minimal.</h1>
-                        <p>Use any HTML in your slides, extend with CSS. You have full control.</p>
+                    <li style="background-image: url('__IMG__/img/wood.jpg');">
+                        <div class="inner">
+                            <h1>Fluid, flexible, fantastically minimal.</h1>
+                            <p>Use any HTML in your slides, extend with CSS. You have full control.</p>
 
-                    </div>
-                </li>
+                        </div>
+                    </li>
 
-                <li style="background-image: url('__IMG__/img/subway.jpg');">
-                    <div class="inner">
-                        <h1>Open-source.</h1>
-                        <p>Everything to do with Unslider is hosted on GitHub.</p>
+                    <li style="background-image: url('__IMG__/img/subway.jpg');">
+                        <div class="inner">
+                            <h1>Open-source.</h1>
+                            <p>Everything to do with Unslider is hosted on GitHub.</p>
 
-                    </div>
-                </li>
+                        </div>
+                    </li>
 
-                <li style="background-image: url('__IMG__/img/shop.jpg');">
-                    <div class="inner">
-                        <h1>Uh, that’s about it.</h1>
-                        <p>I just wanted to show you another slide.</p>
-                    </div>
-                </li>
+                    <li style="background-image: url('__IMG__/img/shop.jpg');">
+                        <div class="inner">
+                            <h1>Uh, that’s about it.</h1>
+                            <p>I just wanted to show you another slide.</p>
+                        </div>
+                    </li>
+                </if>
             </ul>
         </div>
         <script src="__JS__/unslider.min.js"></script>

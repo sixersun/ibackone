@@ -1,0 +1,42 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<div class="main-title">
+		<h2>轮播图管理</h2>
+	</div>
+	<div class="tab-wrap">
+		<ul class="tab-nav nav">
+			<li  class="current"><a href="{:U('index')}">轮播图</a</li>
+		</ul>
+		<div>
+			<div class="data-table table-striped">
+				<table>
+					<thead>
+					<tr>
+						<th>编号</th>
+						<th>图片名称</th>
+						<th>图片</th>
+						<th>操作</th>
+					</tr>
+					</thead>
+					<tbody>	
+						<volist name="pic" id="pic" >
+							<tr>
+								<td>{$pic.id}</td>
+								<td>{$pic.name}</td>
+								<td><img src="{$pic.path}" stle="max-height:150px"></td>
+								<td><a href="{:U('/Slider/del/id/'.$pic['id'])}">删除</a></td>
+							</tr>
+						</volist>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div>
+			<form action="admin.php?s=/Slider/save" method="POST" enctype="multipart/form-data">
+					<input type="file" name="file" class="text input-large">
+					<input type="submit" name="submit" value="上传" />
+			</form>
+		</div>
+	</div>
+</block>
