@@ -16,7 +16,9 @@ use OT\DataDictionary;
 class SearchController extends HomeController {
 
 	//系统首页
-    public function index(){    
+    public function index(){ 
+        $pic = M('Slider')->select();
+        $this->assign('pic',$pic);
         $this->display();
     }
     public function search(){
@@ -28,6 +30,8 @@ class SearchController extends HomeController {
         $this->_ajax(1,null,$company['company']);
     }
     public function fangwei(){
+        $pic = M('Slider')->select();
+        $this->assign('pic',$pic);
         $this->display();
     }
     public function fangwei_search(){

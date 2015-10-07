@@ -18,9 +18,6 @@ class IndexController extends HomeController {
 
 	//系统首页
     public function index(){
-        $nav1=D('Channel')->lists();
-        $this->assign('nav',$nav1);
-        $this->assign('nav1',$nav1);
         $category = D('Category')->getTree();
         $lists    = D('Document')->lists(null);
         $pic = M('Slider')->select();
